@@ -8,3 +8,6 @@ Activate environment
     -   source myenv/bin/activate
 
 
+Postgres
+    -   pip install psycopg2
+    -   pip install psycopg2-binary
