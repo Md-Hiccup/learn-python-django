@@ -1,0 +1,10 @@
+Install virtualenv
+    -   pip3 install virtualenv
+
+Create environment
+    -   virtualenv myenv
+
+Activate environment
+    -   source myenv/bin/activate
+
+
