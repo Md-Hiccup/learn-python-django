@@ -1,3 +1,5 @@
+Link - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
+
 For Ubuntu Installation
 
     -   sudo apt-get install wget ca-certificates
@@ -6,7 +8,6 @@ For Ubuntu Installation
 
     -   sudo apt-get update
     -   sudo apt-get install postgresql postgresql-contrib
-    -   sudo apt-get install postgresql-11 pgadmin4
 
 To Run the postgresql server
     -   sudo -u postgresq psql
@@ -14,9 +15,24 @@ To Run the postgresql server
     -   sudo -i -u postgresql
     -   psql
 
-To Rename password
-    -   \password postgres
+    To Rename password
+        -   \password postgres
 
-To Create Database
-    -   create database <dbname>;
+    To Create Database
+        -   create database <dbname>;
 
+    To Check Connection info
+        -   \conninfo
+
+To check postgres status online/down
+    -   pg_lsclusters
+
+To Uninstall
+    -   dpkg -l | grep postgres
+    -   sudo apt-get --purge remove pgdg-keyring postgresql postgresql-11 postgresql-12 postgresql-9.5 postgresql-client-12 postgresql-client-common  postgresql-common  postgresql-contrib
+
+To Know about the Postgresql service
+    -   sudo service postgresql status      # To Check Status
+    -   sudo service postgresql start       # To Start Postgresql
+    -   sudo service postgresql stop        # To Stop Postgresql
+    -   sudo service postgresql restart     # To Restart Postgresql

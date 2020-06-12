@@ -47,60 +47,35 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{% url 'home' %}">Hussain</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="https://github.com/Md-Hiccup">Github</a>
-                    <a class="nav-item nav-link" href="https://twitter.com/Hussain36498203">Twitter</a>
-                    <a class="nav-item nav-link" href="{% static 'Resume.pdf' %}">Resume</a>
-                    <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="">
+                    <img src="{% static 'logo.png' %}" class="d-inline-block" height="30" width="30">
+                    Product Hunt
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-item nav-link" href="">Sign Up</a>
+                        <a class="nav-item nav-link" href="">Login</a>
+                    </div>
                 </div>
+
             </div>
         </nav>
     </header>
 
-    <main role="main">
-
-        <section class="jumbotron text-center">
-            <div class="container">
-                <h1>Hi, I'm Hussain</h1>
-                <p class="lead text-muted">Hey, my name is Mohammad Hussain and I love to build website in Django.</p>
-                <p>
-                    <a href="mailto:ask2md@gmail.com" class="btn btn-primary my-2">Email me</a>
-                </p>
-                <img src="{% static 'hicc.jpg' %}" height=300 />
-            </div>
-        </section>
-
-        <div class="album py-5 bg-light">
-            <div class="container">
-
-                <div class="row">
-
-                    {% for job in jobs.all %}
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <img class="card-img-top" src="{{ job.image.url }}"/>
-                            <div class="card-body">
-                                <p class="card-text">{{ job.summary}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-    </main>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
 
     <footer class="text-muted">
         <div class="container text-center">
-            <p>&copy; Mohammad Hussain {% now "Y" %}</p>
+            <p>Have a happy {% now "Y" %}</p>
         </div>
     </footer>
     <!-- JS, Popper.js, and jQuery -->
