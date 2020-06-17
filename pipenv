@@ -1,0 +1,20 @@
+Install pipenv
+    -   pip3 install pipenv
+
+Install modules in pipenv
+    -   pipenv install django
+
+Open virtual environment
+    -   pipenv shell
+
+    For Exit
+    -   exit
+
+Remove Virtual environment
+    -   pipenv --rm
+
+List install modules
+    -   pip freeze
+
+For more help
+    -   pipenv --help
