@@ -1,0 +1,196 @@
+DESIGN-PATTERN: 
+    - well-known solutions to recurring problems.
+WHY USE:
+    1. No need to reinvent when there is a perfect solutions.
+    2. Systematic reuse of design ideas or best practices yields lower cost and higher quality
+CHARACTERSTICS:
+    1. Language neutral - independent of language
+    2. Dynamic -  cuz new design patterns or optimized design patterns
+    3. Incomplete by design to promote customization - customization of design patterns required when it needs.
+
+
+TYPES:
+1. Creational
+    Def: 
+        - Used to create obects in a systematic way
+    Benefits:
+        - Flexibility
+        - Ex: Different subtypes of objects from the same class can be created at runtime 
+2. Structural
+    Def:
+        - Establishes useful relationships between software components in certain configuration
+        - To accomplish a goal : both functional and non-functional
+        - Different goals yields different structure.
+3. Behavioral
+    Def:
+        - Best practices of objects interaction
+    Focus: 
+        - Define the protocols.
+
+
+OBJECT ORIENTED MECHANISMS Used
+1. Creational - Polymorphism, Interface
+2. Structural - Inheritance, Interface
+3. Behavioral - Methods and their signature, Interface
+
+
+OBJECT ORIENTED PROGRAMMING
+Objects - Represent the entities in both problem and solutions domain
+    Ex: In Conference Room
+        -   Participant - Problem domain
+        -   Registration form - Solution domain
+Classes - Templates to create objects to avoid recreating them each time.
+    Ex: Cookie cutter
+
+Classes define object in terms of
+1. Attribute
+    - Represent - properties of entity
+    - Capture -   the state of entity
+2. Method
+    - Represent - behaviors.
+    Ex: In Conference Room
+        Participant Class 
+            Attribute - age
+            Method  -   canel_reg()
+
+
+INHERITANCE & POLYMORPHISM
+1. Inheritance - 
+    - Establishes a relationships between two classes as Parent and Child
+        - Child Class :
+            1. Keeps the attribute and method of its parent.
+            2. Adds new attributea and method of its own.
+            3. Override the existing method of its parent.
+    Ex: 
+        Pet Class (Parent)
+            Attribute - name, age etc.
+            Method  - speak()
+        
+        Dog (Child)
+            Attribute - name, age
+            Method - speak() - override with barking sound
+        Cat (Child)
+            Attribute - name, age
+            Method - speak() - override with meow sound
+
+2. Polymorphism - 
+    - Relies on inheritance
+    - Allows child classes to be instantiated and treated as the same type as its parents
+    - Enables a parent class to be manifested into any of its child classes
+    Ex:
+        - User of the pet class
+            - Does not have to know if the pet object is dog or cat until the runtime
+        - True nature of object
+            - Hidden until its speak() method is invoked
+        
+        - 'Woof' vs 'Meow'
+            - If 'woof' - Dog, else 'meow' - Cat.
+
+
+PATTERN CONTEXT
+1. Participant
+    - classes involved to form a design patterns
+    - different class different Roles
+2. Quality attribute
+    - Nonfunctional requirements
+        - Usability, modifiability, reliability, performance etc
+    - Effect of entire software
+        - Architectural solutions
+3. Forces
+    - various factors or trade of to consider
+    - manifested in quality attribute
+    - which unintended consequences
+4. Consequences
+    - Side effects
+        - Better security but worse performance
+    - Decision making  
+        - Despite the consequences
+
+NOTE: Knowing when to use design pattern and when not to use it, is Crucial. Especially design pattern can cause more problem instead of solving problems when they are misused.
+
+
+PATTERN LANGUAGE
+1. Name
+    - should capture the gist of the pattern
+    - becomes part of the vocabulary during the design pattern
+    - needs to be meaningful and memorable
+2. CONTEXT
+    - provides a scenario, Patterns may be Used
+    - provides more insight, when to use it or when not to use it
+3. Problem
+    - describe a design challenge the pattern is trying to addressing
+4. Solution
+    - Specifies a pattern
+        - Structure - relationships among elements in their pattern
+        - Behavior - interaction between these elements used in the pattern
+5. Related pattern
+    - List other patterns used together with the pattern being described, or similar but different patterns
+
+
+CREATIONAL PATTERNS 
+1. Factory
+    - Factory is an object specializing in creating other objects.
+    Problem
+        - Uncertainites in types of objects (not knowing of which object need to create)
+        - Decision to be made at runtime regarding what classes to use
+    
+2. Abstract Factory
+3. Singleton
+    - only one instance
+    - global variable in an object-oriented way
+    scenario
+        - An information cache shared by multiple objects
+        - borg design pattern
+4. Builder
+    - solution to an Anti-Pattern called telescoping constructor.
+    1. Director
+    2. Abstract Builder: Interface
+    3. Concrete Builder: implements the Interface
+    4. Product: object being built
+5. Prototype
+    - creating many identical objects individually expensive
+    - cloning: an alternative is best option instead of creating individual objects
+
+STRUCTURAL PATTERN
+1. Decorator:
+    - new features to an existing objects
+    - dynamic changes
+    - not using subclassing
+    - can be used to add additional features transparently to an existing function
+2. Proxy:
+    - postpone object creation unless absolutely necessary
+    - find a placeholder
+
+    Clients: interatcting with the Proxy
+    Proxy: responsible for creating the resource intesive objects
+3. Adapter:
+    - converts the interface of the class into another one a client is expecting
+4. Composite:
+    - maintain a tree data structure to represent part-whole relationships
+    1. Component - is an Abstract class
+    2. Child    - is an Concrete class inherits from the component class
+    3. Composite - is an Concrete class also inheriting from the component class
+        - maintains the child objects by adding and removing them to the tree data strucutre
+    - Related - Decorator, Iterator, Visitor
+5. Bridge
+    - helps untange an unnecessary complicated class hierarchy, Especially when implementation specific classes are mixed together with implementation-indpendent classes.
+    - Related - Abstract, Adapter
+
+
+BEHAVIORAL PATTERN
+1. Observer
+    - have one to many relationships between a subject and multiple observers.
+    - Subject - Abstract class (Attach, Detach, Notify)
+    - Concrete subject - inherits from the Abstract subject class
+    - Related - Singleton
+2. Visitor
+    - allows adding new features to an existing class hierarchy without changing it
+3. Iterator
+    - The iterator pattern allows a client to have sequential access to the elements of an aggregate object without exposing its underlying structure.
+    - Relate - Composite
+4. Startegy
+    - The Strategy pattern offers a family of interchangeable algorithms to a client
+5. Chain of responsibility
+    - Chain of Responsibility opens up various possibilities of processing for a given request. The Chain of Responsibility pattern decouples the request and its processing
+    - Abstract Handler - Successor
+    - Concrete Handler - Checks if it can handle the request
