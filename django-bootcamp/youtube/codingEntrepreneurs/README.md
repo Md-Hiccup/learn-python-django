@@ -22,3 +22,35 @@
     -   python manage.py migrate
     -   python manage.py createsuperuser
     -   python mannage.py runserver
+
+
+### Day 1
+
+#### Classes, Functions and Syntax
+    -   Virtual Environments
+    -   Classes
+    -   Functions
+    -   Basic Maths
+    -   Objects & Methods
+    -   Basic Syntax
+
+#### Why Django
+    -   It's a Web-Framework
+    -   It's written in Python
+    -   Batteries Included (User authentication, Admin panel etc.)
+
+#### Code
+    -   django-admin startapp products
+    -   python manage.py startapp profiles
+    -   python manage.py makemigrations
+    -   python manage.py migrate
+    -   python manage.py shell
+        -   from products.models import Product
+        -   Product.objects.create(title='Raspberry Pi')
+        -   Product.objects.get(id=1)
+        -   Product.objects.get
+        -   obj = Product.objects.create(id=1)
+        -   obj.content = 'this is content for content field'
+        -   obj.save()
+        -   obj.delete()
+
