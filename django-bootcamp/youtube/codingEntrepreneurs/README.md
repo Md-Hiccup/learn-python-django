@@ -54,3 +54,9 @@
         -   obj.save()
         -   obj.delete()
 
+#### Bulk creating the product
+    -   Product.objects.bulk_create([
+            Product(title='This is a test'),
+            Product(title='This is only a test'),
+        ])
+
