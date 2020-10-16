@@ -48,8 +48,8 @@
         -   from products.models import Product
         -   Product.objects.create(title='Raspberry Pi')
         -   Product.objects.get(id=1)
-        -   Product.objects.get
-        -   obj = Product.objects.create(id=1)
+        -   Product.objects.get(id=2)
+        -   obj = Product.objects.get(id=1)
         -   obj.content = 'this is content for content field'
         -   obj.save()
         -   obj.delete()
@@ -60,3 +60,10 @@
             Product(title='This is only a test'),
         ])
 
+
+### Day 2
+    -   python manage.py shell
+        -   from products.models import Product
+        -   obj = Product.objects.get(id=1)
+        -   qs = Product.objects.all()
+    -   Model -> migrate -> Url -> Views
