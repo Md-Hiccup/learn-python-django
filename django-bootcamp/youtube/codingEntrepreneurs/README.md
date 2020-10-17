@@ -67,3 +67,12 @@
         -   obj = Product.objects.get(id=1)
         -   qs = Product.objects.all()
     -   Model -> migrate -> Url -> Views
+
+
+### Day 3
+    -   3 Formats of String substitution
+        -   name = "Jack"
+        -   sub1 = f"Hello {name}"
+        -   sub2 = "Hello {name}".format(name=name)
+        -   sub3 = "Hello %s" % (name)
+
