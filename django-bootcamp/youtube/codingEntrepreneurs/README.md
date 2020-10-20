@@ -76,3 +76,13 @@
         -   sub2 = "Hello {name}".format(name=name)
         -   sub3 = "Hello %s" % (name)
 
+### Day 4
+
+#### Add / Update data in your database without the Django
+    -   Http Methods
+        -   Post    -   Create
+        -   Get     -   Retrieve
+        -   Put     -   Update
+        -   Delete  -   Destroy
+
+#### Django Forms Validation
