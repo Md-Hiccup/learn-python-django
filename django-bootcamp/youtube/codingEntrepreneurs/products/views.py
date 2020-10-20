@@ -2,7 +2,7 @@ from django.http import HttpResponse, JsonResponse, Http404
 from django.shortcuts import render
 
 from .models import Product
-from .forms import ProductForm
+from .forms import ProductForm, ProductModelForm
 
 # Create your views here.
 
@@ -25,17 +25,54 @@ def search_view(request, *args, **kwargs):
     context = {"name": "Huzzy"}
     return render(request, "home.html", context)
 
+
+
+# def product_create_view(request, *args, **kwargs):
+#     print(request.POST)
+#     print(request.GET)
+#     context = {}
+#     if request.method == 'POST':
+#         post_data = request.POST or None
+#         if post_data != None:
+#             my_form = ProductForm(request.POST)
+#             print(my_form.is_valid())
+#             if my_form.is_valid():
+#                 print(my_form.cleaned_data.get('title'))
+#                 title_from_input = my_form.cleaned_data.get('title')
+#                 Product.objects.create(title=title_from_input)
+#                 # print('post data', post_data)
+#     return render(request, 'forms.html', context)
+
 def product_create_view(request, *args, **kwargs):
-    print(request.POST)
-    print(request.GET)
-    context = {}
-    if request.method == 'POST':
-        post_data = request.POST or None
-        if post_data != None:
-            my_form = ProductForm(request.POST)
-            print(my_form.is_valid())
-            print('post data', post_data)
-    return render(request, 'forms.html', context)
+    # form = ProductForm()
+    # if reqeust.method == 'POST':
+    #     form = ProductForm(request.POST)
+    # OR
+    # form = ProductForm(request.POST or None)
+
+    form = ProductModelForm(request.POST or None)
+    if form.is_valid():
+        ## with ProductForm
+        # print(request.POST)
+        # print(form.cleaned_data)
+        # data = form.cleaned_data
+        # Product.objects.create(**data)
+        # Product(**data)
+        # form = ProductForm()
+
+        ## with ProductModelForm
+        obj = form.save(commit=False)
+        # do some stuff
+        obj.save()
+        form = ProductModelForm()
+
+        # return HttpResponseRedirect("/sucess")
+        # return redirect()
+    return render(request, 'forms.html', { "form":  form })
+
+
+
+
 
 # http based response
 def product_detail_view(request, pk):

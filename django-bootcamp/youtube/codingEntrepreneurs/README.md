@@ -86,3 +86,5 @@
         -   Delete  -   Destroy
 
 #### Django Forms Validation
+    -   Django Form
+    -   Django ModelForm
