@@ -76,6 +76,7 @@
         -   sub2 = "Hello {name}".format(name=name)
         -   sub3 = "Hello %s" % (name)
 
+
 ### Day 4
 
 #### Add / Update data in your database without the Django
@@ -88,3 +89,23 @@
 #### Django Forms Validation
     -   Django Form
     -   Django ModelForm
+
+
+### Day 5
+
+#### User authentication (Login,Logout,Register)
+    -   python manage.py shell
+        -   from django.contrib.auth import get_user_model
+        -   User = get_user_model()
+        -   User.objects.all()
+        -   User.objects.create(username='huzz', email='huzz@gmail.com')
+        -   User.object.create_user('abc', 'abc@gmail.com', 'abc123')
+        -   user = User.objects.get(username='abc')
+        -   user.set_password('abc1234')
+        -   user.save()
+
+#### Django other stuffs
+    -   Django authentication system
+    -   Django settings
+    -   Django-allauth
+    -   Django widget

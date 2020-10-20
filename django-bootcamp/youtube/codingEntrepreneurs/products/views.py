@@ -1,3 +1,6 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
+
 from django.http import HttpResponse, JsonResponse, Http404
 from django.shortcuts import render
 
@@ -43,6 +46,8 @@ def search_view(request, *args, **kwargs):
 #                 # print('post data', post_data)
 #     return render(request, 'forms.html', context)
 
+# @login_required
+@staff_member_required
 def product_create_view(request, *args, **kwargs):
     # form = ProductForm()
     # if reqeust.method == 'POST':
@@ -63,6 +68,7 @@ def product_create_view(request, *args, **kwargs):
         ## with ProductModelForm
         obj = form.save(commit=False)
         # do some stuff
+        obj.user = request.user
         obj.save()
         form = ProductModelForm()
 

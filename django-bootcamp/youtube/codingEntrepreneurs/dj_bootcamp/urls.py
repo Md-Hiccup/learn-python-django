@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path  # url
 
+from accounts.views import (
+    login_view,
+    logout_view,
+    register_view
+)
 from products.views import (
     # bad_view,
     search_view,
@@ -26,6 +31,10 @@ from products.views import (
 )
 
 urlpatterns = [
+    path('login/', login_view),
+    path('logout/', logout_view),
+    path('register/', register_view),
+
     # path('bad-view/', bad_view),
     path('search/', search_view),
     # path('products/1/', product_detail_view),
