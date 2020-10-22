@@ -109,3 +109,13 @@
     -   Django settings
     -   Django-allauth
     -   Django widget
+
+
+### Day 6
+
+#### Automated Test
+    -   python manage.py test
+    -   python manage.py test accounts
+    -   assertEqual
+    -   assertNotEqual
+    -   assertTrue
